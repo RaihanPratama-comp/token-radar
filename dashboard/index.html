@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header>
+  <h1>Token Launch Radar</h1>
+  <p class="sub">Which pre-token protocol is worth farming next — ranked by implied value from live TVL, momentum and time without a token.</p>
+  <div class="stats" id="stats"></div>
+  <div class="toppick" id="toppick"></div>
+</header>
+<section class="controls">
+  <input id="q" type="search" placeholder="Search name, category, chain...">
+  <select id="status">
+    <option value="all">All protocols</option>
+    <option value="pre">Not recorded as having a token</option>
+    <option value="traded">Token recorded</option>
+    <option value="watch">Watchlist only</option>
+  </select>
+  <select id="sort">
+    <option value="value">Sort: implied value</option>
+    <option value="tvl">Sort: TVL</option>
+    <option value="change">Sort: 7d change</option>
+    <option value="age">Sort: age without token</option>
+  </select>
+</section>
+<main>
+  <table>
+    <thead><tr><th>#</th><th>Protocol</th><th>Category</th><th>TVL</th><th>7d</th><th>Implied value</th><th>Status</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <article id="detail" class="detail"><p>Select any row to see exactly how to farm it: steps, cost and time.</p></article>
+</main>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
